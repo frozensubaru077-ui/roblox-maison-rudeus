@@ -1,140 +1,221 @@
--- SCRIPT SIMPLE - MAISON BASIQUE
--- Place UNIQUEMENT ce script dans ServerScriptService
--- C'est tout ce qu'il faut
+-- MAISON ROBLOX - VERSION CORRECTE
+-- 1 GRANDE PIECE AVEC MURS QUI ENCLOSENT
+-- Place ce script dans ServerScriptService et c'est tout
 
-print("======== DEBUT CONSTRUCTION ========")
+print("🏗️ CONSTRUCTION DE LA MAISON...")
+wait(0.5)
 
 local workspace = game:GetService("Workspace")
 
--- Créer le sol
+-- ========== SOL ==========
 local sol = Instance.new("Part")
 sol.Name = "Sol"
-sol.Shape = Enum.PartType.Block
-sol.Material = Enum.Material.Brick
-sol.BrickColor = BrickColor.new("Brick yellow")
-sol.Size = Vector3.new(50, 1, 50)
+sol.Material = Enum.Material.Wood
+sol.BrickColor = BrickColor.new("Dark wood")
+sol.Size = Vector3.new(20, 0.5, 20)
 sol.CFrame = CFrame.new(0, 0, 0)
 sol.CanCollide = true
 sol.Parent = workspace
 print("✓ Sol créé")
 
--- SALON
-local salonSol = Instance.new("Part")
-salonSol.Name = "SalonSol"
-salonSol.Material = Enum.Material.Wood
-salonSol.BrickColor = BrickColor.new("Dark wood")
-salonSol.Size = Vector3.new(10, 0.5, 10)
-salonSol.CFrame = CFrame.new(0, 1, 0)
-salonSol.CanCollide = true
-salonSol.Parent = workspace
-print("✓ Sol Salon")
+-- ========== MUR AVANT (avec porte) ==========
+local murAvant = Instance.new("Part")
+murAvant.Name = "MurAvant"
+murAvant.Material = Enum.Material.Brick
+murAvant.BrickColor = BrickColor.new("Dark stone grey")
+murAvant.Size = Vector3.new(20, 4, 0.5)
+murAvant.CFrame = CFrame.new(0, 2, -10)
+murAvant.CanCollide = true
+murAvant.Parent = workspace
+print("✓ Mur avant créé")
 
--- Murs Salon
-local mur1 = Instance.new("Part")
-mur1.Name = "MurSalon1"
-mur1.Material = Enum.Material.Brick
-mur1.BrickColor = BrickColor.new("Medium stone grey")
-mur1.Size = Vector3.new(10, 4, 0.5)
-mur1.CFrame = CFrame.new(0, 3, -5)
-mur1.CanCollide = true
-mur1.Parent = workspace
+-- ========== MUR ARRIERE ==========
+local murArriere = Instance.new("Part")
+murArriere.Name = "MurArriere"
+murArriere.Material = Enum.Material.Brick
+murArriere.BrickColor = BrickColor.new("Dark stone grey")
+murArriere.Size = Vector3.new(20, 4, 0.5)
+murArriere.CFrame = CFrame.new(0, 2, 10)
+murArriere.CanCollide = true
+murArriere.Parent = workspace
+print("✓ Mur arrière créé")
 
-local mur2 = Instance.new("Part")
-mur2.Name = "MurSalon2"
-mur2.Material = Enum.Material.Brick
-mur2.BrickColor = BrickColor.new("Medium stone grey")
-mur2.Size = Vector3.new(10, 4, 0.5)
-mur2.CFrame = CFrame.new(0, 3, 5)
-mur2.CanCollide = true
-mur2.Parent = workspace
+-- ========== MUR GAUCHE ==========
+local murGauche = Instance.new("Part")
+murGauche.Name = "MurGauche"
+murGauche.Material = Enum.Material.Brick
+murGauche.BrickColor = BrickColor.new("Dark stone grey")
+murGauche.Size = Vector3.new(0.5, 4, 20)
+murGauche.CFrame = CFrame.new(-10, 2, 0)
+murGauche.CanCollide = true
+murGauche.Parent = workspace
+print("✓ Mur gauche créé")
 
-local mur3 = Instance.new("Part")
-mur3.Name = "MurSalon3"
-mur3.Material = Enum.Material.Brick
-mur3.BrickColor = BrickColor.new("Medium stone grey")
-mur3.Size = Vector3.new(0.5, 4, 10)
-mur3.CFrame = CFrame.new(-5, 3, 0)
-mur3.CanCollide = true
-mur3.Parent = workspace
+-- ========== MUR DROIT ==========
+local murDroit = Instance.new("Part")
+murDroit.Name = "MurDroit"
+murDroit.Material = Enum.Material.Brick
+murDroit.BrickColor = BrickColor.new("Dark stone grey")
+murDroit.Size = Vector3.new(0.5, 4, 20)
+murDroit.CFrame = CFrame.new(10, 2, 0)
+murDroit.CanCollide = true
+murDroit.Parent = workspace
+print("✓ Mur droit créé")
 
-local mur4 = Instance.new("Part")
-mur4.Name = "MurSalon4"
-mur4.Material = Enum.Material.Brick
-mur4.BrickColor = BrickColor.new("Medium stone grey")
-mur4.Size = Vector3.new(0.5, 4, 10)
-mur4.CFrame = CFrame.new(5, 3, 0)
-mur4.CanCollide = true
-mur4.Parent = workspace
-print("✓ Murs Salon")
+-- ========== TOIT ==========
+local toit = Instance.new("Part")
+toit.Name = "Toit"
+toit.Material = Enum.Material.Slate
+toit.BrickColor = BrickColor.new("Dark red")
+toit.Size = Vector3.new(20.5, 0.5, 20.5)
+toit.CFrame = CFrame.new(0, 4.25, 0)
+toit.CanCollide = true
+toit.Parent = workspace
+print("✓ Toit créé")
 
--- PORTE SALON
+-- ========== PORTE D'ENTREE ==========
 local porte = Instance.new("Part")
 porte.Name = "Porte"
 porte.Material = Enum.Material.Wood
-porte.BrickColor = BrickColor.new("Brown")
-porte.Size = Vector3.new(1.5, 2.5, 0.3)
-porte.CFrame = CFrame.new(0, 1.5, -5.2)
+porte.BrickColor = BrickColor.new("Reddish brown")
+porte.Size = Vector3.new(2, 3, 0.3)
+porte.CFrame = CFrame.new(0, 1.5, -10.15)
 porte.CanCollide = true
 porte.Parent = workspace
 
--- Ajouter ClickDetector pour ouvrir/fermer
 local clickDetector = Instance.new("ClickDetector")
 clickDetector.Parent = porte
 
 local porteouverte = false
 clickDetector.MouseClick:Connect(function(player)
     if not porteouverte then
-        porte.CFrame = CFrame.new(0, 1.5, -5.2) * CFrame.Angles(0, math.rad(90), 0)
+        porte.CFrame = CFrame.new(0, 1.5, -10.15) * CFrame.Angles(0, math.rad(90), 0)
         porteouverte = true
-        print("🚪 Porte ouverte!")
+        print("🚪 PORTE OUVERTE!")
     else
-        porte.CFrame = CFrame.new(0, 1.5, -5.2)
+        porte.CFrame = CFrame.new(0, 1.5, -10.15)
         porteouverte = false
-        print("🚪 Porte fermée!")
+        print("🚪 PORTE FERMEE!")
     end
 end)
-print("✓ Porte créée (clique dessus!)")
+print("✓ Porte d'entrée créée (clique dessus!)")
 
--- LUMIERE
+-- ========== FENETRES ==========
+local fenetre1 = Instance.new("Part")
+fenetre1.Name = "Fenetre1"
+fenetre1.Material = Enum.Material.Glass
+fenetre1.BrickColor = BrickColor.new("Cyan")
+fenetre1.Size = Vector3.new(2, 1.5, 0.2)
+fenetre1.CFrame = CFrame.new(-5, 2.5, -10.2)
+fenetre1.CanCollide = false
+fenetre1.Parent = workspace
+
+local fenetre2 = Instance.new("Part")
+fenetre2.Name = "Fenetre2"
+fenetre2.Material = Enum.Material.Glass
+fenetre2.BrickColor = BrickColor.new("Cyan")
+fenetre2.Size = Vector3.new(2, 1.5, 0.2)
+fenetre2.CFrame = CFrame.new(5, 2.5, -10.2)
+fenetre2.CanCollide = false
+fenetre2.Parent = workspace
+print("✓ Fenêtres créées")
+
+-- ========== LUMIERE PRINCIPALE ==========
 local lumiere = Instance.new("Part")
 lumiere.Name = "Lumiere"
 lumiere.Shape = Enum.PartType.Ball
 lumiere.Material = Enum.Material.Neon
 lumiere.BrickColor = BrickColor.new("Bright yellow")
-lumiere.Size = Vector3.new(0.5, 0.5, 0.5)
+lumiere.Size = Vector3.new(0.6, 0.6, 0.6)
 lumiere.CanCollide = false
-lumiere.CFrame = CFrame.new(0, 3.5, 0)
+lumiere.CFrame = CFrame.new(0, 3.7, 0)
 lumiere.Parent = workspace
 
 local pointLight = Instance.new("PointLight")
-pointLight.Brightness = 3
-pointLight.Range = 30
+pointLight.Brightness = 4
+pointLight.Range = 40
+pointLight.Color = Color3.fromRGB(255, 255, 200)
 pointLight.Parent = lumiere
 print("✓ Lumière créée")
 
--- MOBILIER SIMPLE
--- Canapé
+-- ========== MOBILIER ==========
+
+-- CANAPE (salon)
 local canape = Instance.new("Part")
 canape.Name = "Canape"
 canape.Material = Enum.Material.Fabric
-canape.BrickColor = BrickColor.new("Dark stone grey")
-canape.Size = Vector3.new(4, 1, 2)
-canape.CFrame = CFrame.new(0, 1.5, 2)
+canape.BrickColor = BrickColor.new("Maroon")
+canape.Size = Vector3.new(6, 1.2, 2)
+canape.CFrame = CFrame.new(0, 0.6, 3)
 canape.CanCollide = true
 canape.Parent = workspace
 
--- Table basse
-local table = Instance.new("Part")
-table.Name = "Table"
-table.Material = Enum.Material.Wood
-table.BrickColor = BrickColor.new("Brown")
-table.Size = Vector3.new(2, 0.5, 1.5)
-table.CFrame = CFrame.new(0, 1.2, 0.5)
-table.CanCollide = true
-table.Parent = workspace
-print("✓ Mobilier créé")
+-- TABLE BASSE
+local tableBasse = Instance.new("Part")
+tableBasse.Name = "TableBasse"
+tableBasse.Material = Enum.Material.Wood
+tableBasse.BrickColor = BrickColor.new("Brown")
+tableBasse.Size = Vector3.new(3, 0.5, 2)
+tableBasse.CFrame = CFrame.new(0, 0.25, 1)
+tableBasse.CanCollide = true
+tableBasse.Parent = workspace
 
-print("======== MAISON TERMINÉE ========")
-print("✨ La maison est prête!")
-print("🚪 Clique sur la porte pour l'ouvrir/fermer")
-print("🚶 Utilise WASD pour te déplacer")
+-- LIT
+local lit = Instance.new("Part")
+lit.Name = "Lit"
+lit.Material = Enum.Material.Fabric
+lit.BrickColor = BrickColor.new("Bright blue")
+lit.Size = Vector3.new(3, 1, 2.5)
+lit.CFrame = CFrame.new(-6, 0.5, -5)
+lit.CanCollide = true
+lit.Parent = workspace
+
+-- ARMOIRE
+local armoire = Instance.new("Part")
+armoire.Name = "Armoire"
+armoire.Material = Enum.Material.Wood
+armoire.BrickColor = BrickColor.new("Dark wood")
+armoire.Size = Vector3.new(1.5, 3, 0.8)
+armoire.CFrame = CFrame.new(6, 1.5, -6)
+armoire.CanCollide = true
+armoire.Parent = workspace
+
+-- TABLE DE CUISINE
+local tableKitchen = Instance.new("Part")
+tableKitchen.Name = "TableKitchen"
+tableKitchen.Material = Enum.Material.Wood
+tableKitchen.BrickColor = BrickColor.new("Brown")
+tableKitchen.Size = Vector3.new(2.5, 1, 2)
+tableKitchen.CFrame = CFrame.new(0, 0.5, -3)
+tableKitchen.CanCollide = true
+tableKitchen.Parent = workspace
+
+-- REFRIGERATEUR
+local frigo = Instance.new("Part")
+frigo.Name = "Refrigerateur"
+frigo.Material = Enum.Material.Metal
+frigo.BrickColor = BrickColor.new("Dark stone grey")
+frigo.Size = Vector3.new(1.2, 2.5, 0.8)
+frigo.CFrame = CFrame.new(7, 1.25, 7)
+frigo.CanCollide = true
+frigo.Parent = workspace
+
+print("✓ Mobilier ajouté")
+
+-- ========== MESSAGE FINAL ==========
+print("\n")
+print("╔════════════════════════════════╗")
+print("║   ✨ MAISON TERMINEE! ✨     ║")
+print("╚════════════════════════════════╝")
+print("\n🏠 Maison construite avec:")
+print("  • 4 murs complets qui enferment")
+print("  • 1 toit")
+print("  • 1 porte interactive (clique dessus!)")
+print("  • 2 fenêtres")
+print("  • Lumière")
+print("  • Mobilier (canapé, lit, armoire, tables, frigo)")
+print("\n🎮 Contrôles:")
+print("  • WASD = Déplacement")
+print("  • Souris = Caméra")
+print("  • Clique sur la PORTE pour l'ouvrir/fermer")
+print("\n")
